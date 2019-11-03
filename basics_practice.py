@@ -21,6 +21,17 @@ print(x)
 y = 2.5
 print(type(y)) # Prints "class of y i.e 'float' "
 print(y, y + 1, y * 2, y ** 2)
+print(25/4)
+print(27//4) # Rounds to nearest int
+print(27%4) # Reminder
+print(2 ** 3) # Power of
+print('{:b}'.format(21)) # Converts to binary number
+print('{:o}'.format(21)) # Converts to octadecimal
+print('{:x}'.format(21)) # Converts to hexadecimal
+
+a= range(0, 10, 3) # To define range start , end, step
+a = np.arange(0, 10, 3) # To to create an array start, end, step
+print(a)
 
 ''' Boolean Operations'''
 
@@ -38,6 +49,18 @@ hello = 'Hello' # Strings Literals can use single quotes
 world = 'World' # or double quotes
 print(type(hello))
 print(len(hello))
+q = 'HelloWorld'
+print(q[1])
+print(q[-2])
+print(q[2:5])
+string = 'con' + 'catenation'
+print(string)
+string = 2 * ('con' + 'catenation' + '-')
+print(string)
+print('Today I had {0} cups of {1}'.format(3, 'coffee'))
+print('The prices are: {0},{1},{2}'.format(10, 20, 30))
+print('The {vehicle} had {0} crashes in the year {1}'.format(2, 2005, vehicle="XYZ"))
+
 hw = hello + world # String concatination
 print(hw)
 hw12 = '%s %s %d' % (hello, world, 12) #String style string formatting
@@ -100,6 +123,7 @@ print(even_squres)
 
 
 ''' Dictionaries '''
+
 d ={'cat': 'cute', 'dog': 'furry' } # Create a new dictionary with some data
 print(d['cat']) # prints entry from the dictionary
 print('cat' in d) # Check if the dictionary contains the given key
@@ -108,7 +132,12 @@ print(d['fish'])
 print(d.get('monkey', 'N/A'))
 print(d.get('fish', 'N/A'))
 del d['fish']
-
+print(d.keys()) # prints all the keys in the dictionary
+print(d.values()) # prints all the values in the dictionary
+del d['cat'] # Delets the key 'cat'
+d.clear() # clears the whole dictionary
+new_dictionary = {x: x+1 for x in range(2,10)}
+print(new_dictionary)
 d = {'person':2, 'cat':4, 'spider':8}
 for animal in d:
     legs = d[animal]
@@ -187,18 +216,50 @@ g.greet() # Calling the method 'greet' in that perticular class
 g.greet(loud=True)
 
 
+def fun_return():
+    return 'I am me',2 # Return whatever it is specified
+r = fun_return()
+print(r)
 
+def add(a, b):
+    print(a + b)
+q = add(10, 19)
 
+def multiply(a, b=20):
+    c = a * b
+    return c
+q = multiply(10)
+print(q)
 
+def division_my_2(a, b):
+    
+    # def even_check(a, b):
+    if a % b == 0:
+        return a, b
+    else:
+        print('Zero by error')
+    c = a /b
+    return c
+q = division_my_2(10, 3)
 
+def division_my_2(a, b):
+    
+    def even_check(a, b):
+        if a % b == 0:
+            c = a /b
+            print(c)   
+        else:
+            print('Zero by error')
+    even_check(a, b)
+    
+q = division_my_2(10, 2)
 
+file = open('polynomial.csv', 'r') # Opens file and reald ony
+print(file.read())
+print(file.read(4))
+file.close
+print('File name:' + file.name)
+print('Is file close:' + str(file.closed))
+print('File mode:' + file.mode)
 
-
-
-
-
-
-
-
-
-
+print(list(filter(lambda x: x+1, [1, 2, 3])))
