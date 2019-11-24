@@ -30,7 +30,8 @@ d = np.eye(5)
 print(d)
 e = np.random.random((2,3)) # Creates an array filled with random elements
 print(e)
-
+f = np.random.randint(54)
+print(f)
 ''' Array indexing and slicing '''
 a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
 print(a)
@@ -54,6 +55,30 @@ print(a[np.arange(3), d])
 print(a[0, 0], a[1, 3], a[2, 2]) # The above example is equivalent to this
 a[np.arange(3), d] += 10
 print(a)
+
+a1 = np.array([[[1, 1, 1, 0], [2, 2, 2, 0], [3, 3, 3, 0]], [[4, 4, 4, 0], [5, 5, 5, 0], [6, 6, 6, 0]], [[7, 7, 7, 0], [8, 8, 8, 0], [9, 9, 9, 0]]])
+print(a1.shape)
+print(a1.size)
+a2 = a1.reshape((2, 18))
+print(a2)
+print(a1.ndim)
+print(a1.nbytes)
+print(a1.shape)
+print(a1.size)
+a3 = a1.sum()
+a4 = a1.cumsum()
+print(a1.max())
+print(a1.min())
+print(a2.max(axis=0))
+print(a2.max(axis=1))
+a5 = np.arange(8,80, 10)
+a6 = np.linspace(40, 44, 50)
+a7 = a6.shape
+a8 = np.random.rand(4,6,2)
+a9 = np.random.rand(4,6)
+a10 = np.random.randn(4, 9)
+
+
 
 ''' Boolean array indexing '''
 bool_idx = a > 2 # Finds the elements of a > 2
@@ -114,7 +139,12 @@ print(y)
 y = a + v # can also do the same as above without stacking the matrices
 print(y)
 
-  
-
-
-
+import matplotlib.pyplot as plt  
+mu = 0.9
+sigma = 10
+v = np.random.normal(mu,sigma,10000)
+# Plot a normalized histogram with 50 bins
+plt.hist(v, bins=50, normed=1) # matplotlib version (plot)
+plt.show()
+jo ='hi'
+print("Hello %s, Welcome to the Jungle" % jo)

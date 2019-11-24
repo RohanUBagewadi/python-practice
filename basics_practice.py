@@ -6,6 +6,7 @@ Created on Tue Oct 29 20:12:15 2019
 """
 
 ''' Python basics practice'''
+import numpy as np
 
 x = 3
 print(type(x)) # Prints "class of 'x' "
@@ -29,7 +30,7 @@ print('{:b}'.format(21)) # Converts to binary number
 print('{:o}'.format(21)) # Converts to octadecimal
 print('{:x}'.format(21)) # Converts to hexadecimal
 
-a= range(0, 10, 3) # To define range start , end, step
+a= range(0, 10) # To define range start , end, step
 a = np.arange(0, 10, 3) # To to create an array start, end, step
 print(a)
 
@@ -53,16 +54,16 @@ q = 'HelloWorld'
 print(q[1])
 print(q[-2])
 print(q[2:5])
-string = 'con' + 'catenation'
+string = 'con' + ' ' + 'catenation'
 print(string)
 string = 2 * ('con' + 'catenation' + '-')
 print(string)
 print('Today I had {0} cups of {1}'.format(3, 'coffee'))
 print('The prices are: {0},{1},{2}'.format(10, 20, 30))
-print('The {vehicle} had {0} crashes in the year {1}'.format(2, 2005, vehicle="XYZ"))
+print('The vehicle {vehicle} had {0} crashes in the year {1}'.format(2, 2005, vehicle="XYZ"))
 
 hw = hello + world # String concatination
-print(hw)
+print(hw)  
 hw12 = '%s %s %d' % (hello, world, 12) #String style string formatting
 print(hw12)
 
@@ -89,7 +90,7 @@ q = xs.pop(1) # Remove and return item at index (default last).
 print(q, xs)
 
 ''' Slicing '''
-nums = list(range(5)) # Range is a built in fun. that creates a sequience of numbers 
+nums = list(range(1, 5)) # Range is a built in fun. that creates a sequience of numbers 
 print(type(nums))
 print(nums)
 print(nums[2:4])
